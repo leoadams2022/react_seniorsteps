@@ -10,7 +10,7 @@ export default function People({ data }) {
         <div>
             <input type="text" onChange={(e) => handelSearch(e)} placeholder='search by name' />
             {
-                (searchStr === '' ? data : data.filter((person) => (person.name === searchStr))).map((person, index) => {
+                (searchStr === '' ? data : data.filter((person) => (person.name.includes(searchStr)))).map((person, index) => {
                     return (
                         <div key={index}>
                             <Person name={person.name} age={person.age} email={person.email} number={person.number} />
